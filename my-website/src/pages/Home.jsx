@@ -5,7 +5,7 @@ import { Calendar, Award, Users, Clock, Star, ArrowRight, Play, Shield, Heart } 
 import VideoHero from '../Components/home/VideoHero';
 import ServiceCard from '../Components/home/ServiceCard';
 import TestimonialCard from '../Components/home/TestimonialCard';
-import StatsSection from '../Components/home/tatsSection';
+import StatsSection from '../Components/home/statsSection';
 
 const Home = () => {
   const services = [
