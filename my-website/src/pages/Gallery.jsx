@@ -120,28 +120,66 @@ const Gallery = () => {
       exit={{ opacity: 0 }}
       className="pt-16"
     >
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-teal-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+      {/* Video Banner Header */}
+      <section className="relative h-96 overflow-hidden">
+        <div className="video-banner" aria-label="Welcome video banner" role="banner">
+          <video 
+            src="./public/video.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            poster="dental-clinic-poster.jpg"
+            className="absolute inset-0 w-full h-full object-cover"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Gallery
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed opacity-90">
-              Explore our state-of-the-art facility, advanced equipment, and the amazing 
-              transformations we've achieved for our patients.
-            </p>
-          </motion.div>
+            Your browser does not support the video tag.
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-purple-900/50 to-teal-900/70" />
+          <div className="video-overlay absolute inset-0 flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="text-center text-white"
+            >
+              <motion.h1 
+                className="text-4xl md:text-6xl font-bold mb-4"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                Experience Exceptional Dental Care
+              </motion.h1>
+              <motion.p
+                className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                Explore our state-of-the-art facility and see the amazing transformations we create
+              </motion.p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Filter Tabs */}
       <section className="py-8 bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Our Gallery
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Browse through our collection of facility photos, equipment, and patient transformations
+            </p>
+          </motion.div>
+          
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <motion.button
